@@ -134,7 +134,7 @@ const SignIn = () => {
       {/* Sección derecha con la imagen */}
       <div className="w-1/2 bg-black flex flex-col items-center justify-center text-white">
         <Image src="/hubw.png" width={300} height={300} alt="Logo" />
-        <h2 className="text-3xl mt-4">MaluzHub</h2>
+        <h2 className="text-3xl mt-4">HazloHub</h2>
       </div>
     </div>
   );
