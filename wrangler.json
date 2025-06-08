@@ -11,5 +11,7 @@
   "observability": {
     "enabled": true
   },
-  "upload_source_maps": true
+  "vars": {
+    "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY": "pk_test_Y2hhbXBpb24tbWFjYXctOTAuY2xlcmsuYWNjb3VudHMuZGV2JA"
+  }
 }
