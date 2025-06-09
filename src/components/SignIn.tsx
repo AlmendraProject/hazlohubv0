@@ -13,7 +13,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-// ✅ Esquema de validación con Zod
 const signInSchema = z.object({
   email: z.string().email({ message: "Correo no válido" }),
   password: z.string().min(6, { message: "Mínimo 6 caracteres" }),
@@ -60,11 +59,24 @@ const SignIn = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-black">
-      {/* Sección izquierda con el formulario */}
-      <div className="w-1/2 flex items-center justify-center bg-white rounded-r-[30px] shadow-xl overflow-hidden">
+    <div className="flex min-h-screen bg-black flex-col md:flex-row">
+      {/* Logo móvil (solo en pantallas pequeñas) */}
+      <div className="md:hidden w-full flex justify-center py-6 bg-white">
+        <Image
+          src="/hubB.png"
+          width={100}
+          height={100}
+          alt="Logo móvil"
+          className="rounded-[20px]"
+        />
+      </div>
+
+      {/* Sección izquierda: formulario */}
+      <div className="w-full md:w-1/2 flex items-center justify-center bg-white rounded-none md:rounded-r-[30px] shadow-xl overflow-hidden">
         <div className="w-full max-w-md p-8">
-          <h2 className="text-2xl font-semibold mb-6">Inicia sesión</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-center md:text-left">
+            Inicia sesión
+          </h2>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             {/* Email */}
             <div className="space-y-2">
@@ -131,9 +143,15 @@ const SignIn = () => {
         </div>
       </div>
 
-      {/* Sección derecha con la imagen */}
-      <div className="w-1/2 bg-black flex flex-col items-center justify-center text-white">
-        <Image src="/hubw.png" width={300} height={300} alt="Logo" />
+      {/* Sección derecha: imagen grande (solo visible en pantallas medianas o mayores) */}
+      <div className="hidden md:flex w-1/2 bg-black flex-col items-center justify-center text-white">
+        <Image
+          src="/hubBlanco.png"
+          width={300}
+          height={300}
+          className="rounded-[20px] mb-4 select-none pointer-events-none"
+          alt="Logo grande"
+        />
         <h2 className="text-3xl mt-4">HazloHub</h2>
       </div>
     </div>

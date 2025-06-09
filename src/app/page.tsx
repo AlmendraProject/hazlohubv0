@@ -26,7 +26,7 @@ export default function HomePage() {
               <div className="w-4 h-4 bg-white rounded-full shadow-lg opacity-80" />
             </div>
             <Image
-              src="/hubw.png"
+              src="/hubBlanco.png"
               alt="Cargando..."
               width={150}
               height={150}
