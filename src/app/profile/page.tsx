@@ -12,7 +12,7 @@ export default function ProfilePage() {
         <SignOutButton>
           <Button variant="destructive">
             <LogOut className="mr-2 h-4 w-4" />
-            Cerrar sesión
+            Cerrar sesión 01
           </Button>
         </SignOutButton>
       </div>
